@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+<head>
+<title>HBD</title>
+<meta charset="utf-8">
+<style>
+.card
+  {
+  padding: 0px;
+  margin-left: 270px;
+  width:300px;
+  height:380px;
+  background-color: white;
+  } 
+  .card23
+  {
+    width:600px;
+  height:380px;
+  padding: 0px;
+  margin-left:140px;
+  content: "";
+  display: table;
+  clear: both;
+  } 
+  .card2
+  {
+  float: left;
+  width: 50%;
+  } 
+  .card3
+  {
+    float: left;
+  width: 50%;
+  } 
+body{
+text-align: center;
+font-family:Arial;
+margin: 0px;
+padding:0px;
+}
+
+.rows{
+  display:grid;
+height:min-content;
+grid-template-columns: 250px 850px 250px;
+
+}
+.b1{background-color:black}
+.b2{
+background-color:palevioletred;}
+.b3{background-color:black}
+
+.b1{
+grid-column: 1;
+grid-row: 1/3;
+}
+
+.b2{
+grid-column: 2;
+grid-row: 1/3;
+}
+
+.b3{
+  grid-column: 3;
+  grid-row: 1/3;
+}
+
+</style>
+</head>
+<body>
+
+<div class="rows">
+<div class="b1">
+  <img id="a1" src="balloons1.gif" onclick="changeImage1()">
+  <img id="a2" src="balloons2.gif" onclick="changeImage2()">
+</div>
+<div class="b2" id="b2"> 
+  <img src="pp1.png" style=" margin-right:40px;width: 200px;">
+  <img id="hbd" src="Happy_Birthday.gif" onclick="changebg()" style="width: 300px;height: 200px;">
+  <img src="pp2.png" style="margin-left:40px;width: 200px;">
+  <br><br>
+  <button id="button" onclick="viewcard()"  >CLICK HERE</button>
+  <br><br>
+  <h4 id="para" style="text-align:center ;color:blue;font-size:larger;display:none;">On your birthday may all that you asked from God be granted to you hundred fold!
+    Happy Birthday to my sweetest friend. Always keep smiling the way you do! 
+    Have an amazing day and an even more special year ahead. May God Bless you.</h4>
+    <br>
+    <br>
+  <div class="card" id="card1" style="display:none;">
+    <img src="images.jpg" onclick="viewcard23()" style="width:300px; height:380px;">
+ </div>
+<div class="card23" >
+  <div class="card2" id="card2" style="display: none;">
+  <img src="wish1.jpg" onclick="viewcard23()" style="width:300px; height:380px;">
+  </div>
+  <div class="card3" id="card3" style="display: none;">
+  <img src="wish2.jpg" onclick="viewcard23()" style="width:300px; height:380px;">
+</div>
+<br>
+<img src="wrap1.png">
+  <img src="wrap.png">
+  <img src="cake.png">
+  <img src="wrap2.png">
+  <img src="wrap3.png">
+</div>
+
+</div>
+
+
+
+<div class="b3" >
+  <img id="a3" src="balloons1.gif" onclick="changeImage3()">
+  <img id="a4" src="balloons2.gif" onclick="changeImage4()">
+</div>
+</div>
+
+
+<script type="text/javascript">
+function changeImage1() {
+  var image = document.getElementById('a1');
+  if (image.src.match("balloons1.gif")) {
+    image.src="https://i.gifer.com/6ob.gif" 
+    image.style="width:249px;height:409px"
+  } else {
+    image.src = "balloons1.gif";
+  }
+}
+
+function changeImage2() {
+  var image = document.getElementById('a2');
+  if (image.src.match("balloons2.gif")) {
+    image.src="https://i.gifer.com/6ob.gif" 
+    image.style="width:249px;height:409px"
+  } else {
+    image.src = "balloons2.gif";
+  }
+}
+function changeImage3() {
+  var image = document.getElementById('a3');
+  if (image.src.match("balloons1.gif")) {
+    image.src="https://i.gifer.com/6ob.gif" 
+    image.style="width:249px;height:409px"
+  } else {
+    image.src = "balloons1.gif";
+  }
+}
+function changeImage4() {
+  var image = document.getElementById('a4');
+  if (image.src.match("balloons2.gif")) {
+    image.src="https://i.gifer.com/6ob.gif" 
+    image.style="width:249px;height:409px"
+  } else {
+    image.src = "balloons2.gif";
+  }
+}
+</script>
+
+
+<script type="text/javascript"> 
+  function viewcard() {
+  document.getElementById("para").style.display = "contents";
+  var m = document.getElementById('card1')
+  var x = document.getElementById('card2')
+  var y = document.getElementById('card3')
+  x.style.display = "none";
+  y.style.display = "none";
+  if (m.style.display === "none") {
+    m.style.display = "block";
+  } else {
+    m.style.display = "none";
+    document.getElementById("para").style.display = "none";
+  }
+}
+
+function viewcard23() {
+  var m = document.getElementById('card1')
+  m.style.display="none";
+  var x = document.getElementById('card2')
+  var y = document.getElementById('card3')
+  if (x.style.display === "none" && y.style.display === "none" ) {
+    x.style.display = "block";
+    y.style.display = "block";
+  } else {
+    x.style.display = "none";
+    y.style.display = "none";
+    viewcard();
+  }
+}
+</script>
+</body>
+</html>
